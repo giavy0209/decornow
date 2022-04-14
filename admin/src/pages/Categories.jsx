@@ -1,8 +1,6 @@
 import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import { Table, Button, Modal, Form, InputNumber, Select, Input, Upload, notification, Switch, message } from 'antd'
-import { CKEditor } from 'ckeditor4-react';
 import axios from '../axios';
-CKEditor.editorUrl = '/ckeditor/ckeditor.js';
 const { Item, useForm } = Form
 export default function App() {
     const [Data, setData] = useState([])

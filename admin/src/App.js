@@ -27,8 +27,11 @@ function App() {
   }
   return (
     <div className="App">
+      {!token && <div style={{position : 'fixed' , top : 10, right : 10}} onClick={()=>navigate('/admin/login')} className="logout">Login</div> }
+      {token && 
+      <>
       <div className="logout" style={{position : 'fixed' , top : 10, right : 10}} onClick={logout}>Logout</div>
-      {token && <Menu
+      <Menu
         onClick={handleClick}
         mode="horizontal"
         selectedKeys={[currentUrl]}
@@ -38,7 +41,9 @@ function App() {
         <Menu.Item key='/admin/banner'>Banner</Menu.Item>
         <Menu.Item key='/admin/news'>Tin tức- dự án</Menu.Item>
         <Menu.Item key='/admin/info'>Liên hệ</Menu.Item>
-      </Menu>}
+      </Menu>
+      </>
+      }
       <Routes>
         <Route path='/admin/upload' element={<Upload />} />
         <Route path='/admin/danh-muc' element={<Categories />} />
