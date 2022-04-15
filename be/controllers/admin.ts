@@ -1,21 +1,41 @@
-import {Request, Response} from 'express'
+import { Request, Response } from 'express'
 import { Admins } from '../models'
 const admin = {
-    get : () => {
-
-    },
-    post : async (req : Request,res : Response) => {
+    get: async (req: Request, res: Response) => {
         try {
-            const {username, password, role} = req.body
-            await Admins
+            const data = await Admins.find({})
+
+            res.send({ status: 1, data })
+        } catch (error) {
+
+        }
+    },
+    post: async (req: Request, res: Response) => {
+        try {
+            await Admins.create({ ...req.body })
+            res.send({ status: 1 })
         } catch (error) {
             res.send(error)
         }
     },
-    patch : () => {
-
+    put: async (req: Request, res: Response) => {
+        try {
+            const { _id } = req.query
+            
+            await Admins.findByIdAndUpdate(_id, req.body)
+            res.send({ status: 1 })
+        } catch (error) {
+            res.send(error)
+        }
     },
-    delete : () => {
-
+    delete: async (req: Request, res: Response) => {
+        try {
+            await Admins.findByIdAndDelete(req.query._id)
+            res.send({ status: 1 })
+        } catch (error) {
+            res.send(error)
+        }
     }
 }
+
+export default admin

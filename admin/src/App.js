@@ -1,10 +1,8 @@
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import Upload from "./pages/Upload";
-import Categories from "./pages/Categories";
-import Banners from "./pages/Banners";
-import Info from "./pages/Info";
-import News from "./pages/News";
 import Login from "./pages/Login";
+import Upload from "./pages/Upload";
+import Staff from "./pages/Staff";
+import Discount from "./pages/Discount";
 import { Menu } from "antd";
 import { useCallback, useEffect, useState } from "react";
 
@@ -37,20 +35,16 @@ function App() {
         selectedKeys={[currentUrl]}
       >
         <Menu.Item key='/admin/upload'>Hình ảnh</Menu.Item>
-        <Menu.Item key='/admin/danh-muc'>Danh mục</Menu.Item>
-        <Menu.Item key='/admin/banner'>Banner</Menu.Item>
-        <Menu.Item key='/admin/news'>Tin tức- dự án</Menu.Item>
-        <Menu.Item key='/admin/info'>Liên hệ</Menu.Item>
+        <Menu.Item key='/admin/staff'>Nhân viên</Menu.Item>
+        <Menu.Item key='/admin/discount'>Mã giảm giá</Menu.Item>
       </Menu>
       </>
       }
       <Routes>
-        <Route path='/admin/upload' element={<Upload />} />
-        <Route path='/admin/danh-muc' element={<Categories />} />
-        <Route path='/admin/banner' element={<Banners />} />
-        <Route path='/admin/news' element={<News />} />
-        <Route path='/admin/info' element={<Info />} />
         <Route path='/admin/login' element={<Login />} />
+        <Route path='/admin/upload' element={<Upload />} />
+        <Route path='/admin/staff' element={<Staff />} />
+        <Route path='/admin/discount' element={<Discount />} />
       </Routes>
     </div>
   );

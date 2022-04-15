@@ -7,7 +7,6 @@ import { UploadOutlined } from '@ant-design/icons';
 
 export default function App() {
     const token = localStorage.getItem('token')
-    console.log(token);
     const [ListImages, setListImages] = useState([])
 
     const getListImage = useCallback(async () => {

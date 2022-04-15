@@ -10,7 +10,6 @@ const {
 const auth = MONGO_USER && MONGO_PASSWORD ? MONGO_USER + ':' + encodeURIComponent(MONGO_PASSWORD) + '@' : ''
 
 const dbURI = `mongodb://${auth}${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB}${auth ? '?authSource=admin' : ''}`
-console.log(dbURI);
 
 mongoose.connect(dbURI, {
 })

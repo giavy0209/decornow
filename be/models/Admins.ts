@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose'
-import { IAdmin } from '../interfaces'
+import { Admin } from 'interfaces'
 
-const AdminSchema = new Schema<IAdmin>({
+const AdminSchema = new Schema<Admin>({
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     name: { type: String },
@@ -10,6 +10,6 @@ const AdminSchema = new Schema<IAdmin>({
     timestamps: true
 })
 
-const Admins = model<IAdmin>('admins', AdminSchema)
+const Admins = model<Admin>('admins', AdminSchema)
 
 export default Admins

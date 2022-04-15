@@ -1,1 +1,2 @@
-export {default as IAdmin} from './IAdmin'
+export {default as Admin} from './Admin'
+export {default as Discount} from './Discount'

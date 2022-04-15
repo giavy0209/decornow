@@ -61,7 +61,6 @@ export default function App() {
     }, [])
 
     const handleEditForm = useCallback(async data => {
-        console.log(data);
         const res = await axios.put(`/categories?_id=${EditID}`, data)
         message.success('Đã Sửa')
         getData()
