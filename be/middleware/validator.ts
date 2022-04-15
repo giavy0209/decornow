@@ -111,6 +111,17 @@ export const isObjectId = () => {
   }
 }
 
+export const isEmail = () => {
+  const notValidResult = notValid('not valid email')
+  const validResult = valid('')
+  return async (data: string) => {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(data) ) return validResult
+    return notValidResult
+
+    
+  }
+}
+
 
 
 export default validator

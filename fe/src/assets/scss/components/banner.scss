@@ -1,0 +1,42 @@
+.banner {
+    .track {
+        width: 100%;
+        aspect-ratio: 18 / 9;
+        overflow: hidden;
+        position: relative;
+        .list {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: calc(100% * var(--total));
+            display: flex;
+            transform: translateX(calc(-100% * var(--current) / var(--total)));
+            transition: .3s;
+            .item {
+                width: calc(100% / var(--total));
+                height: 100%;
+                position: relative;
+            }
+        }
+        .dots {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translate(-50% ,-50%);
+            display: flex;
+            column-gap: 10px;
+            .dot {
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+                border-radius: 50%;
+                transition: .3s;
+                cursor: pointer;
+                &.active {
+                    background-color : $primalry-color
+                }
+            }
+        }
+    }
+}

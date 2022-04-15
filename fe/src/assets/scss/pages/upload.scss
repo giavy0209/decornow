@@ -1,0 +1,12 @@
+.upload {
+    background-image: url(https://cdn.wallpaperdirect.com/asset/img/product/110099/tiled/albany-whites-white-wallpaper-tiled-110099.jpg) ;
+    width: 100%;
+    aspect-ratio: 16/9;
+    .list-image {
+        .image {
+            width: 30%;
+            border: 3px dashed #000;
+            aspect-ratio: var(--ratio);
+        }
+    }
+}

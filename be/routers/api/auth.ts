@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {auth} from "controllers";
-import validator, { encript, isExist, isLength, isUnique } from "middleware/validator";
-import { Admins } from "models";
+import validator, { encript, isEmail, isExist, isLength, isUnique } from "middleware/validator";
+import { Admins, Users } from "models";
 const router = Router()
 
 router.route('/auth-admin')
@@ -10,5 +10,11 @@ router.route('/auth-admin')
         validator('body', 'username', isExist(Admins,'username')),
         auth.adminAuth
     )
+
+router.route('/auth')
+        .post(
+            validator('body' , 'email' , isEmail(), isExist(Users , 'email')),
+            auth.userAuth
+        )
 
 export default router

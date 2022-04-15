@@ -13,6 +13,17 @@ const auth = {
             res.send(error)
         }
     },
+    userAuth : async (req : Request,res : Response) => {
+        try {
+            const {email, password} = req.body
+            const validPassword = compareSync(password,email.password)
+            if(!validPassword) return res.send({status : 100})
+            const token = jwt.sign({_id : email._id},'userToken')
+            res.send({status : 1, token})
+        } catch (error) {
+            res.send(error)
+        }
+    },
 }
 
 export default auth

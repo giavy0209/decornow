@@ -60,3 +60,21 @@ export const isAdminAny = (req : Request, res : Response, next : NextFunction   
 
     }
 }
+
+export const isUser = (req : Request, res : Response, next : NextFunction   ) => {
+    
+    if(req.headers?.authorization?.split(' ')?.[0] === 'Bearer') {
+        try {
+            const token = req.headers?.authorization?.split(' ')?.[1]
+            const payload = verify(token, 'userToken')
+            req.body.payload = payload
+            return next()
+        } catch (error) {
+            res.status(401).send({msg : 'unauth'})
+        }
+    }else {
+        res.status(401).send({msg : 'unauth'})
+
+    }
+}
+

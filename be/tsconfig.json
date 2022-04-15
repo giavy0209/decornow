@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "noImplicitAny": false,
+        "noEmitOnError": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "target": "es5",
+        "outDir": "dist",
+        "downlevelIteration": true,
+        "esModuleInterop": true,
+        "module": "amd",
+        "outFile": "./out.js",
+        "moduleResolution": "Node"
+    },
+}

@@ -1,0 +1,45 @@
+.row-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .label {
+        width: 24px;
+        height: 24px;
+    }
+    .label ~ .input-placeholder {
+        margin-left: 35px;
+    }
+    .input-placeholder {
+        position: relative;
+        width: 100%;
+        border-bottom: $border;
+        padding: 5px;
+        .placeholder {
+            position: absolute;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+            font-size: 18px;
+            transition: .3s;
+        }
+        input {
+            width: 100%;
+            font-size: 18px;
+        }
+        .eye {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translate(0 , -50%);
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+        &.active {
+            .placeholder {
+                top: -18px;
+                font-size: 14px;
+            }
+        }
+    }
+}
