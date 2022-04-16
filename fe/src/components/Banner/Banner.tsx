@@ -33,7 +33,7 @@ const Banner: FunctionComponent<Banner> = ({ items, loop = true, interval = 5000
                 <div className="track">
                     <div style={{ '--total': items.length, '--current': Current } as CSSProperties} className="list">
                         {
-                            items.map(o => <div className="item">
+                            items.map((o,i) => <div key={o.img+i} className="item">
                                 <img className="cover" src={o.img} alt="" />
                             </div>)
                         }

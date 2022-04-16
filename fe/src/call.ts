@@ -26,7 +26,7 @@ const callAPI = {
             const { data } = await client.get(route)
             return data
         } catch (error: any) {
-            return error.response.data
+            return error.response?.data || {msg : 'unknow'}
         }
     },
     post: async (route: string, body: {}) => {
@@ -39,7 +39,7 @@ const callAPI = {
             const { data } = await client.post(route, body)
             return data
         } catch (error: any) {
-            return error.response.data
+            return error.response?.data || {msg : 'unknow'}
         }
     },
     put : async (route : string , body : {}) => {
@@ -52,7 +52,7 @@ const callAPI = {
             const { data } = await client.put(route,body)
             return data
         } catch (error: any) {
-            return error.response.data
+            return error.response?.data || {msg : 'unknow'}
         }
     },
     patch : async (route : string , body : {}) => {
@@ -65,7 +65,7 @@ const callAPI = {
             const { data } = await client.patch(route,body)
             return data
         } catch (error: any) {
-            return error.response.data
+            return error.response?.data || {msg : 'unknow'}
         }
     },
     delete : async (route : string ) => {
@@ -78,7 +78,7 @@ const callAPI = {
             const { data } = await client.delete(route)
             return data
         } catch (error: any) {
-            return error.response.data
+            return error.response?.data || {msg : 'unknow'}
         }
     }
 }

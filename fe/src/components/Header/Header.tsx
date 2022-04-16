@@ -42,8 +42,6 @@ const Header: FC = () => {
 
     useEffect(() => {
         const toggle = event => {
-            console.log(event.path);
-            
             if(!event.path.includes(popoverRef.current)) {
                 setShowPopover(false)
             }
