@@ -41,7 +41,7 @@ const Banner: FunctionComponent<Banner> = ({ items, loop = true, interval = 5000
                     </div>
                     <div className="dots">
                         {
-                            items.map((o,index) => <div onClick={()=>setCurrent(index)} className={`dot ${Current === index? 'active' : ''}`}></div> )
+                            items.map((o,index) => <div key={o.link + 'index'} onClick={()=>setCurrent(index)} className={`dot ${Current === index? 'active' : ''}`}></div> )
                         }
                     </div>
                 </div>
