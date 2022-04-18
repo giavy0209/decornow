@@ -55,18 +55,18 @@ const Upload: FunctionComponent = () => {
     }
 
     useEffect(() => {
-        if(ModalData) {
-            Data[ModalData.index] = {...ModalData}
+        if (ModalData) {
+            Data[ModalData.index] = { ...ModalData }
             setData([...Data])
         }
-    },[ModalData,Data])
+    }, [ModalData, Data])
 
     const handleChangeEdit = (value) => {
         setModalData({
             ...ModalData,
             ...value
         })
-        
+
     }
 
     return (
@@ -77,26 +77,26 @@ const Upload: FunctionComponent = () => {
                         <div className="edit-modal">
                             <div className="row-input">
                                 <div className="label">Vị trí ngang</div>
-                                <input onChange={(e)=>handleChangeEdit({x : e.target.value})} type="number" value={ModalData?.x} />
+                                <input onChange={(e) => handleChangeEdit({ x: e.target.value })} type="number" value={ModalData?.x} />
                             </div>
                             <div className="row-input">
                                 <div className="label">Vị trí dọc</div>
-                                <input onChange={(e)=>handleChangeEdit({y : e.target.value})} type="number" value={ModalData?.y} />
+                                <input onChange={(e) => handleChangeEdit({ y: e.target.value })} type="number" value={ModalData?.y} />
                             </div>
                             <div className="row-input">
                                 <div className="label">Viền</div>
-                                <select onChange={(e)=>handleChangeEdit({border : e.target.value})} value={ModalData?.border}>
+                                <select onChange={(e) => handleChangeEdit({ border: e.target.value })} value={ModalData?.border}>
                                     <option value="full-black">Viền đen</option>
                                     <option value="full-white">Viền trắng</option>
                                 </select>
                             </div>
                             <div className="row-input">
                                 <div className="label">Tỉ lệ ngang</div>
-                                <input onChange={(e)=>handleChangeEdit({ratioX : e.target.value})} value={ModalData?.ratioX} type="number" />
+                                <input onChange={(e) => handleChangeEdit({ ratioX: e.target.value })} value={ModalData?.ratioX} type="number" />
                             </div>
                             <div className="row-input">
                                 <div className="label">Tỉ lệ dọc</div>
-                                <input onChange={(e)=>handleChangeEdit({ratioY : e.target.value})} value={ModalData?.ratioY} type="number" />
+                                <input onChange={(e) => handleChangeEdit({ ratioY: e.target.value })} value={ModalData?.ratioY} type="number" />
                             </div>
                         </div>
                     </Modal>

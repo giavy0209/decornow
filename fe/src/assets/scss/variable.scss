@@ -5,3 +5,42 @@ $text-color : #1d1d1d;
 $primalry-color : #ffd042;
 
 $border : 1px solid #1d1d1d;
+
+$header-h: 90px;
+$footer-h: 353px;
+
+$btn-wrapper-h: 50px;
+$btn-wrapper-h-wrapper: 100px;
+$btn-radius: 4px;
+
+$primary-bg: #ffd042;
+$primary-bg-hover: #ffbf00;
+
+$gold: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+
+$black: #000;
+$white: #fff;
+
+$dark: #1d1d1d;
+$light: #fbfbfb;
+$red: #ff7262;
+$blue: #367DBD;
+$blue-hover: #3070a8;
+
+$scale: 1;
+$size22: calc(200px * $scale);
+$size33: calc(300px * $scale);
+$size44: calc(400px * $scale);
+$size55: calc(500px * $scale);
+
+$wsize2015: calc(200px * $scale);
+$hsize2015: calc(150px * $scale);
+
+$wsize32: calc(300px * $scale);
+$hsize32: calc(200px * $scale);
+
+$wsize43: calc(400px * $scale);
+$hsize43: calc(300px * $scale);
+
+$wsize64: calc(600px * $scale);
+$hsize64: calc(400px * $scale);

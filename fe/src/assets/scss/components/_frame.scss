@@ -1,0 +1,263 @@
+/**
+ * Square frame
+ */
+
+ .frame-hexagon-wrap {
+    filter: drop-shadow(0px 0px 5px rgba($color: $black, $alpha: 0.4));
+  }
+  .frame {
+    position: relative;
+    overflow: hidden;
+    margin: 0 35px 35px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px rgba($color: $black, $alpha: 0.4);
+  
+    &.frame-hexagon {
+      width: 252px;
+      height: 215px;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      
+      .frame-nested {
+        width: 230px;
+        height: 195px;
+        background-color: rgb(241, 241, 241);
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      }
+    }
+    
+    .frame-nested {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $white;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+    }
+  
+    
+    &__loading,
+    &__options {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  
+    &__loading {
+      z-index: 3;
+      background-color: #ccc;
+    }
+  
+    &__options {
+      z-index: 2;
+      background-color: rgba($color: $black, $alpha: 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: visibility .3s linear,opacity .3s linear;
+  
+      &--button {
+        display: inline-flex;
+        background-color: $primary-bg;
+        padding: 0.5rem;
+        margin: 0 0.75rem;
+        border-radius: $btn-radius;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: $dark;
+  
+        &.trash {
+          background-color: $red;
+        }
+      }
+    }
+  
+    &__picture {
+      figure {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+  
+        display: flex;
+        flex-wrap: wrap;
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        transform-origin: 0 0;
+        position: relative;
+      }
+    }
+  
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .frame:hover .frame__options {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .frame {
+    // Frame color
+    &.white {
+      background-color: $white;
+      
+      .frame-nested {
+        border: 1px solid rgba($color: $black, $alpha: 0.4);
+      }
+    }
+    &.black {
+      background-color: $black;
+    }
+    &.gold {
+      background-image: url('../img/gold.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &.woody {
+      background-image: url('../img/woody.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  
+  .frame.frame-square {
+    // Frame type
+    &.border {
+      .frame-nested {
+        .frame-inner {
+          border: 1px solid rgba(0, 0, 0, 0.4);
+          position: relative;
+          overflow: hidden;
+          width: calc(100% - 25px);
+          height: calc(100% - 25px);
+        }
+      }
+    }
+  
+    // Frame size
+    &.frame-20-20 {
+      width: $size22;
+      height: $size22;
+  
+      .frame__picture,
+      .react-transform-wrapper {
+        width: $size22;
+        height: $size22;
+      }
+    }
+    &.frame-30-30 {
+      width: $size33;
+      height: $size33;
+  
+      .frame__picture,
+      .react-transform-wrapper {
+        width: $size33;
+        height: $size33;
+      }
+    }
+    &.frame-40-40 {
+      width: $size44;
+      height: $size44;
+  
+      .frame__picture,
+      .react-transform-wrapper {
+        width: $size44;
+        height: $size44;
+      }
+    }
+    &.frame-50-50 {
+      width: $size55;
+      height: $size55;
+  
+      .frame__picture,
+      .react-transform-wrapper {
+        width: $size55;
+        height: $size55;
+      }
+    }
+    &.frame-20-15 {
+      width: $wsize2015;
+      height: $hsize2015;
+  
+      .frame__picture,
+      .react-transform-wrapper {
+        width: $wsize2015;
+        height: $hsize2015;
+      }
+    }
+    &.frame-30-20 {
+      width: $wsize32;
+      height: $hsize32;
+  
+      .frame__picture,
+      .react-transform-wrapper {
+        width: $wsize32;
+        height: $hsize32;
+      }
+    }
+    &.frame-40-30 {
+      width: $wsize43;
+      height: $hsize43;
+  
+      .frame__picture,
+      .react-transform-wrapper {
+        width: $wsize43;
+        height: $hsize43;
+      }
+    }
+    &.frame-60-40 {
+      width: $wsize64;
+      height: $hsize64;
+  
+      .frame__picture,
+      .react-transform-wrapper {
+        width: $wsize64;
+        height: $hsize64;
+      }
+    }
+  }
+  
+  
+  .frame.frame-hexagon {
+    // Frame type
+    &.border {
+      .frame-nested {
+        .frame-inner {
+          position: relative;
+          overflow: hidden;
+          width: 200px;
+          height: 170px;
+          clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+          
+          .react-transform-wrapper {
+            width: 200px;
+            height: 170px;
+          }
+        }
+      }
+    }
+  
+    .frame-nested {
+      border: none;
+  
+      .react-transform-wrapper {
+        width: 230px;
+        height: 195px;
+      }
+    }
+  }
+  
